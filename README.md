@@ -5,6 +5,7 @@ Based on the latex wrappers by mostlymath:
 https://mostlymaths.net/2010/11/creating-a6-booklets-in-7-easy-steps.html/
 
 # Installation
-Install LaTex with pdflatex.
+Install LaTeX. OSX: brew install --cask mactex
+
 
 
