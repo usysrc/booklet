@@ -1,2 +1,19 @@
 #!/bin/bash
-make
+mkdir output
+SIGNATURE=16
+
+sed "s/INPUTFILE/$1/g" booklet2x1.tex | sed "s/SIGNATURE/$SIGNATURE/g" | pdflatex --output-directory=output -jobname=booklet2x1
+cp output/booklet2x1.pdf .
+
+SIGNATURE=8
+sed "s/INPUTFILE/$1/g" booklet4x1.tex | sed "s/SIGNATURE/$SIGNATURE/g" | pdflatex --output-directory=output -jobname=booklet4x1
+cp output/booklet4x1.pdf .
+
+SIGNATURE=4
+sed "s/INPUTFILE/$1/g" booklet8x1.tex | sed "s/SIGNATURE/$SIGNATURE/g" | pdflatex --output-directory=output -jobname=booklet8x1
+cp output/booklet8x1.pdf ./${1%%.*}_booklet.pdf
+
+# clean up
+rm booklet2x1.pdf
+rm booklet4x1.pdf
+rm booklet8x1.pdf
